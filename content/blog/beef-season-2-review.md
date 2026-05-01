@@ -1,5 +1,5 @@
 ---
-title: Beef Season 2 Review
+title: Beef Season 3 Review
 date: 2026-05-01T22:48:00.000+01:00
 tags:
   - Movies
