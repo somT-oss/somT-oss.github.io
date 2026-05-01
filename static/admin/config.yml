@@ -1,0 +1,53 @@
+backend:
+  name: github
+  repo: somt-oss/somt-oss.github.io   # ← change this
+  branch: main
+
+# Enable local backend for development:
+local_backend: true
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        default: []
+      - { label: "Summary", name: "summary", widget: "string", hint: "Short description shown in the post list" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Order (Weight)", name: "weight", widget: "number", default: 99 }
+      - label: "Tech Stack"
+        name: "tech"
+        widget: "list"
+        default: []
+      - { label: "GitHub URL", name: "github", widget: "string", required: false }
+      - { label: "Live URL", name: "live", widget: "string", required: false }
+      - { label: "Summary", name: "summary", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "About"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }

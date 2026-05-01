@@ -1,0 +1,14 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <span>© {{ now.Year }} {{ .Site.Params.name }}</span>
+      <span class="footer-sep">·</span>
+      <span class="footer-tagline">Built with Hugo. Hosted on GitHub Pages.</span>
+    </div>
+    <div class="footer-links">
+      {{ with .Site.Params.github }}<a href="{{ . }}" target="_blank" rel="noopener">GitHub</a>{{ end }}
+      {{ with .Site.Params.twitter }}<a href="{{ . }}" target="_blank" rel="noopener">Twitter</a>{{ end }}
+      {{ with .Site.Params.linkedin }}<a href="{{ . }}" target="_blank" rel="noopener">LinkedIn</a>{{ end }}
+    </div>
+  </div>
+</footer>

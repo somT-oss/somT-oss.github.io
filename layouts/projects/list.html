@@ -1,0 +1,36 @@
+{{ define "main" }}
+<div class="page-hero">
+  <div class="page-hero__inner">
+    <span class="page-hero__label">Work</span>
+    <h1 class="page-hero__title">Projects<span class="name-accent">.</span></h1>
+    <p class="page-hero__sub">Things I've built, broken, and fixed again.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="project-grid project-grid--full">
+      {{ range .Pages }}
+      <article class="project-card">
+        <div class="project-card__header">
+          <span class="project-card__num">{{ printf "%02d" .Weight }}</span>
+          {{ with .Params.tech }}
+          <div class="project-card__tech">
+            {{ range . }}<span>{{ . }}</span>{{ end }}
+          </div>
+          {{ end }}
+        </div>
+        <h2 class="project-card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <p class="project-card__desc">{{ .Summary | truncate 140 }}</p>
+        <div class="project-card__links">
+          {{ with .Params.github }}<a href="{{ . }}" target="_blank" rel="noopener" class="project-link">GitHub ↗</a>{{ end }}
+          {{ with .Params.live }}<a href="{{ . }}" target="_blank" rel="noopener" class="project-link">Live ↗</a>{{ end }}
+        </div>
+      </article>
+      {{ else }}
+      <p class="empty-state">Projects coming soon.</p>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

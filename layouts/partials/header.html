@@ -1,0 +1,17 @@
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="site-logo">
+      <span class="logo-name">{{ .Site.Params.shortName }}</span>
+      <span class="logo-dot">.</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/blog/" class="{{ if eq .Section "blog" }}active{{ end }}">Writing</a>
+      <a href="/projects/" class="{{ if eq .Section "projects" }}active{{ end }}">Projects</a>
+      <a href="/about/" class="{{ if eq .RelPermalink "/about/" }}active{{ end }}">About</a>
+      <a href="/contact/" class="{{ if eq .RelPermalink "/contact/" }}active{{ end }}">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

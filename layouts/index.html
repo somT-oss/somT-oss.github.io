@@ -1,0 +1,88 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">
+      <span class="label-line"></span>
+      <span>Software Engineer</span>
+    </div>
+    <h1 class="hero-name">
+      <span class="name-line name-line--1">Uchegbu</span>
+      <span class="name-line name-line--2">Somtochukwu</span>
+      <span class="name-line name-line--3">David<span class="name-accent">.</span></span>
+    </h1>
+    <p class="hero-tagline">{{ .Site.Params.tagline }}</p>
+    <div class="hero-actions">
+      <a href="/blog/" class="btn btn--primary">Read my writing</a>
+      <a href="/projects/" class="btn btn--ghost">See projects</a>
+    </div>
+  </div>
+  <div class="hero-deco" aria-hidden="true">
+    <span class="deco-numeral">01</span>
+  </div>
+</section>
+
+<section class="section section--recent-posts">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2 class="section-title">Recent Writing</h2>
+      <a href="/blog/" class="section-link">All posts →</a>
+    </div>
+    <div class="post-list">
+      {{ $posts := where .Site.RegularPages "Section" "blog" }}
+      {{ range first 3 $posts }}
+      <article class="post-row">
+        <div class="post-row__meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02, 2006" }}</time>
+          {{ with .Params.tags }}
+            {{ range first 1 . }}
+            <span class="post-tag">{{ . }}</span>
+            {{ end }}
+          {{ end }}
+        </div>
+        <div class="post-row__content">
+          <h3 class="post-row__title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h3>
+          <p class="post-row__excerpt">{{ .Summary | truncate 120 }}</p>
+        </div>
+        <a href="{{ .RelPermalink }}" class="post-row__arrow" aria-label="Read {{ .Title }}">→</a>
+      </article>
+      {{ else }}
+      <p class="empty-state">No posts yet. Start writing!</p>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section section--projects">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2 class="section-title">Selected Projects</h2>
+      <a href="/projects/" class="section-link">All projects →</a>
+    </div>
+    <div class="project-grid">
+      {{ $projects := where .Site.RegularPages "Section" "projects" }}
+      {{ range first 3 $projects }}
+      <article class="project-card">
+        <div class="project-card__header">
+          <span class="project-card__num">{{ printf "%02d" .Weight }}</span>
+          {{ with .Params.tech }}
+          <div class="project-card__tech">
+            {{ range first 3 . }}<span>{{ . }}</span>{{ end }}
+          </div>
+          {{ end }}
+        </div>
+        <h3 class="project-card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p class="project-card__desc">{{ .Summary | truncate 100 }}</p>
+        <div class="project-card__links">
+          {{ with .Params.github }}<a href="{{ . }}" target="_blank" rel="noopener" class="project-link">GitHub ↗</a>{{ end }}
+          {{ with .Params.live }}<a href="{{ . }}" target="_blank" rel="noopener" class="project-link">Live ↗</a>{{ end }}
+        </div>
+      </article>
+      {{ else }}
+      <p class="empty-state">Projects coming soon.</p>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

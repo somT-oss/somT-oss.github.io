@@ -1,0 +1,49 @@
+{{ define "main" }}
+<div class="page-hero page-hero--blog">
+  <div class="page-hero__inner">
+    <span class="page-hero__label">Writing</span>
+    <h1 class="page-hero__title">Blog Posts<span class="name-accent">.</span></h1>
+    <p class="page-hero__sub">Shared thoughts on software and things I find interesting.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="post-list post-list--full">
+      {{ range .Paginator.Pages }}
+      <article class="post-row">
+        <div class="post-row__meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02, 2006" }}</time>
+          {{ with .Params.tags }}
+            {{ range first 2 . }}<span class="post-tag">{{ . }}</span>{{ end }}
+          {{ end }}
+        </div>
+        <div class="post-row__content">
+          <h2 class="post-row__title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h2>
+          <p class="post-row__excerpt">{{ .Summary | truncate 160 }}</p>
+        </div>
+        <a href="{{ .RelPermalink }}" class="post-row__arrow" aria-label="Read {{ .Title }}">→</a>
+      </article>
+      {{ else }}
+      <div class="empty-state-block">
+        <p>No posts yet. Check back soon.</p>
+      </div>
+      {{ end }}
+    </div>
+
+    {{ if gt .Paginator.TotalPages 1 }}
+    <nav class="pagination">
+      {{ if .Paginator.HasPrev }}
+        <a href="{{ .Paginator.Prev.URL }}" class="btn btn--ghost">← Newer</a>
+      {{ end }}
+      <span class="pagination__info">{{ .Paginator.PageNumber }} / {{ .Paginator.TotalPages }}</span>
+      {{ if .Paginator.HasNext }}
+        <a href="{{ .Paginator.Next.URL }}" class="btn btn--ghost">Older →</a>
+      {{ end }}
+    </nav>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

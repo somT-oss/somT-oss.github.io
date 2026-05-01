@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="page-hero">
+  <div class="page-hero__inner">
+    <h1 class="page-hero__title">{{ .Title }}<span class="name-accent">.</span></h1>
+  </div>
+</div>
+<section class="section">
+  <div class="section-inner">
+    {{ range .Pages }}
+    <article>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

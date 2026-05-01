@@ -1,0 +1,44 @@
+{{ define "main" }}
+<article class="blog-post">
+  <header class="post-header">
+    <div class="post-header__inner">
+      <a href="/blog/" class="back-link">← All posts</a>
+      <div class="post-header__meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 02, 2006" }}</time>
+        {{ with .Params.tags }}
+        <div class="post-tags">
+          {{ range . }}<span class="post-tag">{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
+      </div>
+      <h1 class="post-header__title">{{ .Title }}</h1>
+      {{ with .Params.subtitle }}<p class="post-header__subtitle">{{ . }}</p>{{ end }}
+    </div>
+  </header>
+
+  <div class="post-body">
+    <div class="post-body__inner prose">
+      {{ .Content }}
+    </div>
+  </div>
+
+  <footer class="post-footer">
+    <div class="post-footer__inner">
+      <div class="post-nav">
+        {{ with .PrevInSection }}
+        <a href="{{ .RelPermalink }}" class="post-nav__item post-nav__item--prev">
+          <span class="post-nav__label">← Previous</span>
+          <span class="post-nav__title">{{ .Title }}</span>
+        </a>
+        {{ end }}
+        {{ with .NextInSection }}
+        <a href="{{ .RelPermalink }}" class="post-nav__item post-nav__item--next">
+          <span class="post-nav__label">Next →</span>
+          <span class="post-nav__title">{{ .Title }}</span>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </footer>
+</article>
+{{ end }}
