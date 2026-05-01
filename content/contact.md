@@ -2,9 +2,9 @@
 title: "Contact"
 ---
 
-The best way to reach me is via email at **[your@email.com](mailto:your@email.com)** or find me on [GitHub](https://github.com/yourusername) and [LinkedIn](https://linkedin.com/in/yourhandle).
+The best way to reach me is via email at **[somtochukwuuchegbu@gmail.com](mailto:somtochukwuuchegbu@gmail.com)** or find me on [GitHub](https://github.com/somT-oss) and [LinkedIn](https://linkedin.com/in/somtochukwu-uchegbu-33815619a/).
 
-<form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<form class="contact-form" action="https://formspree.io/f/mwvypkqy" method="POST">
   <div class="form-group">
     <label for="name">Name</label>
     <input type="text" id="name" name="name" placeholder="Your name" required />
@@ -19,5 +19,3 @@ The best way to reach me is via email at **[your@email.com](mailto:your@email.co
   </div>
   <button type="submit" class="btn btn--primary">Send message</button>
 </form>
-
-> The contact form is powered by [Formspree](https://formspree.io) — free tier is plenty for personal use. Sign up and replace `YOUR_FORM_ID` in the page source.
