@@ -1,0 +1,27 @@
+{{ define "main" }}
+<article class="blog-post">
+  <header class="post-header">
+    <div class="post-header__inner">
+      <a href="/projects/" class="back-link">← All projects</a>
+      <div class="post-header__meta">
+        {{ with .Params.tech }}
+        <div class="post-tags">
+          {{ range . }}<span class="post-tag">{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
+      </div>
+      <h1 class="post-header__title">{{ .Title }}</h1>
+      <div class="project-header-links">
+        {{ with .Params.github }}<a href="{{ . }}" target="_blank" rel="noopener" class="btn btn--ghost">View on GitHub ↗</a>{{ end }}
+        {{ with .Params.live }}<a href="{{ . }}" target="_blank" rel="noopener" class="btn btn--primary">Live demo ↗</a>{{ end }}
+      </div>
+    </div>
+  </header>
+
+  <div class="post-body">
+    <div class="post-body__inner prose">
+      {{ .Content }}
+    </div>
+  </div>
+</article>
+{{ end }}

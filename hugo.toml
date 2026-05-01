@@ -1,0 +1,27 @@
+baseURL = "https://somt-oss.github.io/"
+languageCode = "en-us"
+title = "Uchegbu Somtochukwu David"
+
+paginate = 6
+
+[params]
+  name = "Uchegbu Somtochukwu David"
+  shortName = "Somto"
+  tagline = "Software Engineer (Cloud DevOps & Backend). Wannabe cracked dev."
+  email = "somtochukwuuchegbu@gmail.com"
+  github = "https://github.com/somT-oss"
+  twitter = "https://twitter.com/somto_david"
+  linkedin = "https://linkedin.com/in/somtchuwku-uchegbu"
+  description = "Personal site and blog of Uchegbu Somtochukwu David — Software Engineer specializing in Cloud DevOps & Backend."
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
