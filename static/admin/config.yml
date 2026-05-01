@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: somt-oss/somt-oss.github.io   # ← change this
+  repo: somt-oss/somT-oss.github.io   
   branch: main
 
 # Enable local backend for development:
