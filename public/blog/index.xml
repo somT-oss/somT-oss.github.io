@@ -15,12 +15,5 @@
       <guid>http://localhost:1313/blog/beef-season-2-review/</guid>
       <description>This is a review of the new season of Beef</description>
     </item>
-    <item>
-      <title>Hello World — Why I Built My Own Blog</title>
-      <link>http://localhost:1313/blog/hello-world/</link>
-      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/hello-world/</guid>
-      <description>A short note on why I stopped publishing on Medium and built something I actually own.</description>
-    </item>
   </channel>
 </rss>

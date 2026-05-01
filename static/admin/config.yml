@@ -2,9 +2,11 @@ backend:
   name: github
   repo: somT-oss/somT-oss.github.io   
   branch: main
-
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+  
 # Enable local backend for development:
-local_backend: true
+# local_backend: true
 
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
