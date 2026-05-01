@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>K8s Auto-Scaler · Somto</title>
+  <meta name="description" content="Personal site and blog of Uchegbu Somtochukwu David — Software Engineer specializing in Cloud DevOps &amp; Backend." />
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="site-logo">
+      <span class="logo-name">Somto</span>
+      <span class="logo-dot">.</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/blog/" class="">Writing</a>
+      <a href="/projects/" class="active">Projects</a>
+      <a href="/about/" class="">About</a>
+      <a href="/contact/" class="">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+  <main>
+    
+<article class="blog-post">
+  <header class="post-header">
+    <div class="post-header__inner">
+      <a href="/projects/" class="back-link">← All projects</a>
+      <div class="post-header__meta">
+        
+        <div class="post-tags">
+          <span class="post-tag">Go</span><span class="post-tag">Kubernetes</span><span class="post-tag">Prometheus</span>
+        </div>
+        
+      </div>
+      <h1 class="post-header__title">K8s Auto-Scaler</h1>
+      <div class="project-header-links">
+        <a href="https://github.com/yourusername/k8s-autoscaler" target="_blank" rel="noopener" class="btn btn--ghost">View on GitHub ↗</a>
+        
+      </div>
+    </div>
+  </header>
+
+  <div class="post-body">
+    <div class="post-body__inner prose">
+      <h2 id="overview">Overview</h2>
+<p>HPA is great until it isn&rsquo;t. This project started when we needed to scale on a custom business metric (queue depth from an internal service) that the default Horizontal Pod Autoscaler doesn&rsquo;t support.</p>
+<p>The result is a lightweight controller written in Go that watches Prometheus for any metric you configure and drives scaling decisions based on it.</p>
+<h2 id="how-it-works">How It Works</h2>
+<ol>
+<li>The controller runs as a deployment in-cluster</li>
+<li>It scrapes a configured Prometheus query on an interval</li>
+<li>If the metric crosses a threshold, it patches the target deployment&rsquo;s replica count</li>
+<li>Cooldown windows prevent flapping</li>
+</ol>
+<h2 id="what-i-learned">What I Learned</h2>
+<ul>
+<li>Writing Kubernetes controllers with <code>controller-runtime</code></li>
+<li>The surprisingly tricky parts of leader election</li>
+<li>Why you should always implement cooldowns before you think you need them</li>
+</ul>
+
+    </div>
+  </div>
+</article>
+
+  </main>
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <span>© 2026 Uchegbu Somtochukwu David</span>
+      <span class="footer-sep">·</span>
+      <span class="footer-tagline">Built with Hugo. Hosted on GitHub Pages.</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/somT-oss" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://twitter.com/somto_david" target="_blank" rel="noopener">Twitter</a>
+      <a href="https://linkedin.com/in/somtchuwku-uchegbu" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
