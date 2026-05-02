@@ -15,8 +15,4 @@ I see random devs on twitter building cooooooool shit, and I also want to build 
 - **DevOps**: GitHub Actions, ArgoCD, Prometheus, Grafana,  CI/CD, GitHub Actions, Ansible
 - **Databases**: PostgreSQL, Redis, MongoDB
 
-## This Site
-
-I had AI build this site to have a place to write about things that interest me, from software to other topics.
-
 If you want to get in touch, [drop me a message](/contact/).
