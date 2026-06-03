@@ -38,6 +38,8 @@ With this implemenatation, we don't have to worry about the complexity of writin
 
 ### Why use Clock-Based Counter Over LRU for BufferPool Implementation
 
-Here are some advantages for using the Clock-Based Counter over the LRU.
+Here are some advantages of using the Clock-Based Counter over the LRU.
+
+- **Locality**: with pages located closely to each other, we can traverse the array in a contiguous block of memory to get our pages rather than travelling to different memory addresses that may be spread apart to locate the next page in a bp.
 
 -
