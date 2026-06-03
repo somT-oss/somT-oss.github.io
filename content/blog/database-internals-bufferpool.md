@@ -36,10 +36,24 @@ The implementation of the LRU page is done with using an array and a clock-based
 
 With this implemenatation, we don't have to worry about the complexity of writing a modified LRU for this usecase.
 
-### Why use Clock-Based Counter Over LRU for BufferPool Implementation
+### Writing a BufferPool in Go.
 
-Here are some advantages of using the Clock-Based Counter over the LRU.
+I've explained why there's a thing called the buffer pool, explained how it works and now it's time to write code and understand how it all comes together.
 
-- **Locality**: with pages located closely to each other, we can traverse the array in a contiguous block of memory to get our pages rather than travelling to different memory addresses that may be spread apart to locate the next page in a bp.
+The buffer pool is going to be defined as a struct that holds some key pieces of information;
 
--
+`type BufferPool struct {`
+
+	`buffer []*Frame`
+
+	`pageTable map[int]int`
+
+	`maxBufferSize int`
+
+	`clock int`
+
+	`lastInsertedFrameId int`
+
+	`movedClock bool`
+
+`}`
