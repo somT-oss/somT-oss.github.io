@@ -1,6 +1,6 @@
 ---
 title: 'Database Internals: BufferPool'
-date: 2026-06-03T00:07:00
+date: 2026-06-02T00:07:00
 tags:
   - database-internals go-programming software-engineering
 summary: A somewhat deep dive into my understanding of the bufferpool in a database system.
